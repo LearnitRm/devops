@@ -13,7 +13,7 @@ pipeline {
 stage("Trigger remote job"){  
   steps{
     echo "Publishing logs to PayCan Jenkins"
-    sh 'curl -X POST http://localhost:8080/job/refer/build  --form file0=@/var/log/jenkins/jenkins.log --form json='{"parameter": [{"name":"Task.log", "file":"file0"}]}''    
+    sh "curl -X POST http://localhost:8080/job/refer/build  --form file0=@/var/log/jenkins/jenkins.log --form json='{"parameter": [{"name":"Task.log", "file":"file0"}]}'"   
 }
   }
 }
