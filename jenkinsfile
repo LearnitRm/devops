@@ -1,0 +1,22 @@
+pipeline {
+  agent any
+  stages {
+    stage('Start') {
+      steps {
+        sh 'printenv'
+      }
+    }
+    stage('Demo Test') {
+      steps {
+        sh 'printenv'
+      }
+    }
+    stage('Check Python and pip version') {
+       steps {
+        sh 'python --version'
+        sh 'pip --version'
+        sh 'ansible --version'
+       }
+    }
+  } 
+}
